@@ -1,0 +1,10 @@
+<tbody>
+    {% for record in records %}
+    <tr>
+       <td href='/detail/{{ record.id }}'>{{ record.id }}</td>
+       <td>{{ record.contractor }}</td>
+       <td>{{ record.category }}</td>
+       <td><A HREF='tel:{{ record.phone }}'>{{ record.phone }}</A></td>
+    </tr>
+    {% endfor %}
+ </tbody>

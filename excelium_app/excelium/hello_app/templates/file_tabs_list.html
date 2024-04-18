@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}
+File Tabs list
+{% endblock %}
+{% block content %}
+<p>
+
+    <body>
+        <nav>
+            <ul>
+                <div class="inline">
+                    <form method='post' class="inline" action="{{ url_for('dropdown') }}">
+                        {% if tabs %}
+                        {% for t in tabs %}
+                        {% autoescape false %}
+                        <input type="submit" name="tab" class="inline" value="{{t}}"><br>
+                        {% endautoescape %}
+                        {% endfor %}
+                        {% endif %}
+                    </form>
+                </div>
+            </ul>
+        </nav>
+    </body>
+</p>
+{% endblock %}
