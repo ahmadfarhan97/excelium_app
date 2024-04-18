@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}
+File
+{% endblock %}
+{% block content %}
+<p>
+
+    <body>
+        {% for table in tables %}
+        {{ table|safe }}
+        {% endfor %}
+    </body>
+</p>
+{% endblock %}

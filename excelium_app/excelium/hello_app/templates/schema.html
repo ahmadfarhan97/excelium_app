@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}
+File Tabs list
+{% endblock %}
+{% block content %}
+<form class="form-inline" method=POST action="{{ url_for('check_schema') }}">
+  {% for x in jsonfile["fields"] %}
+  <div class="input-group-addon">
+    <div class="input-group-addon">
+      "{{x.name}}"
+      {% set x_type = x.type %}
+      <span class="input-group-addon">column type</span>
+      <select name="column_type" class="selectpicker form-control">
+        <option value="{{x.type}}" value="{{x.name}}">{{x.type}}</option>
+        {% for t in type_list %}
+        {% if t != x_type %}
+        <option value="{{t}}">{{t}}</option>
+        {% endif %}
+        {% endfor %}
+      </select>
+    </div>
+    <hr>
+  </div>
+  {% endfor %}
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+{% endblock %}

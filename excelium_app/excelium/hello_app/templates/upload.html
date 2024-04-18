@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}
+Upload
+{% endblock %}
+{% block content %}
+<form action = "/filetabslist" method = "POST" 
+    enctype = "multipart/form-data">
+    <input type = "file" name = "file" />
+        <input type = "submit"/><input type = "reset"/>
+        <input type = "checkbox" name = "checkbox" value = "checked">Check box to save file
+</form> 
+{% endblock %}
